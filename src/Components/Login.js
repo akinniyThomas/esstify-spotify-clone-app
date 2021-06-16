@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import spotifyLogo from "../assets/spotify2019-830x350.jpg";
-import LoginUrl, { loginUrl } from "../spotify";
+import { loginUrl } from "../spotify";
 
 function Login() {
   return (
