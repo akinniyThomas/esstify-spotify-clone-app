@@ -7,6 +7,7 @@ function Login() {
   return (
     <div className="login">
       <img src={spotifyLogo} alt="spotify" />
+      {console.log(loginUrl)}
       <a href={loginUrl}>LOGIN With Spotify</a>
     </div>
   );

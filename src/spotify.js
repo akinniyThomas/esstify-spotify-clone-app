@@ -10,6 +10,7 @@ const scopes = [
   "user-read-playback-state",
   "user-top-read",
   "user-modify-playback-state",
+  "playlist-read-private",
 ];
 // http://localhost:3000/#access_token=BQBm-TrP9oo8MnMFXArUk-BQ7e90bG11YwCdlSA7rMm_139wb30X9sb7iKY3MnZckVwkY_cOGe13j9reEQFTBKaPW4M2SVgBrS6DyDWjDPH76XEjA07ucSGaU0R4Z_JPK0s2oGpRzCS5Mpec7VwpZj-068looQ4&token_type=Bearer&expires_in=3600
 export const getTokenFromResponse = () => {
@@ -25,6 +26,6 @@ export const getTokenFromResponse = () => {
     }, {});
 };
 
-export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scpoe=${scopes.join(
+export const loginUrl = `${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=token&show_dialog=true&scope=${scopes.join(
   "%20"
-)}&response_type=token&show_dialog=true`;
+)}`;
