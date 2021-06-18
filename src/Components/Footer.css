@@ -2,7 +2,133 @@
   position: fixed;
   bottom: 0;
   height: 65px;
-  width: 100%;
+  width: 98%;
   background-color: #282828;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(202, 200, 200, 0.651);
 }
+
+.footer__icons:hover {
+  transform: scale(1.2) !important;
+  transition: all 300ms ease-in;
+  color: white;
+}
+
+.footer__left {
+  flex: 0.3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__left__album__img {
+  object-fit: contain;
+  height: 100px;
+  width: 100px;
+  align-items: center;
+  margin-right: 20px;
+  flex: 0.1;
+}
+
+.footer__left__album__text {
+  flex: 0.8;
+  margin: 5px;
+}
+
+.footer__left.footer__icons {
+  /* flex: 0.5; */
+  margin-right: 4px;
+}
+
+.footer__left__album__text__title {
+  font-size: 16px;
+}
+
+.footer__left__album__text__content {
+  font-size: 10px;
+}
+
+.footer__center {
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  /* align-items: center center; */
+}
+
+.footer__center__upper {
+  /* padding: center; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+}
+
+.footer__center__upper__play {
+  color: white;
+}
+
+.footer__center__lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.footer__center__lower span {
+  flex: 0.05;
+  font-size: x-small;
+}
+
+.footer__center__lower progress {
+  flex: 9.9;
+  margin: 0 15px;
+  appearance: none;
+  margin-top: 15px;
+  /* background-color: red; */
+  /* color: red; */
+}
+
+progress::-webkit-progress-bar {
+  height: 3px;
+  border-radius: 20px;
+  background-color: rgb(49, 47, 47);
+}
+progress::-webkit-progress-value {
+  height: 3px;
+  border-radius: 20px;
+  background-color: rgba(202, 200, 200, 0.651);
+}
+
+progress:hover::-webkit-progress-value {
+  background-color: greenyellow;
+}
+
+.footer__right {
+  flex: 0.3;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0 100px; */
+  max-width: 300px;
+  align-items: center;
+}
+
+.footer__right * .MuiSlider-root {
+  color: rgba(202, 200, 200, 0.651);
+}
+
+.footer__right * .MuiSlider-root:hover {
+  color: greenyellow;
+}
+
+/* .footer__center__upper_icons {
+
+}
+
+
+
+*/
