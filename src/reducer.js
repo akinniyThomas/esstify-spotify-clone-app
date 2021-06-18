@@ -3,6 +3,7 @@ export const initialState = {
   playlists: [],
   playing: false,
   itemCurrentlyPlaying: null,
+  spotify: null,
   token:
     "BQAHuYKZCSe76Zkum1ej6URhC4iVtIKeFgx3tCKXjjAaQpO03z7U6F3XxOy1SytwambSrOjAmfwOJCaJtRwgYZsj9GUzBgjXFmxK7CGpobxX8sck1pll_4gXDTZ84zJjJh0mkXNcySIeS7qp6ZEXBCZj8T8ktVI",
 };
@@ -25,6 +26,11 @@ export const reducer = (state, action) => {
       return {
         ...state,
         playlists: action.playlists,
+      };
+    case "SET_SPOTIFY":
+      return {
+        ...state,
+        spotify: action.spotify,
       };
     default:
       return state;
