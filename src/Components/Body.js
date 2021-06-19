@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./Body.css";
 import { useDataLayerValue } from "../DataLayer";
 import Header from "./Header";
-import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
@@ -10,14 +9,14 @@ import SongRow from "./SongRow";
 import TimeLapseIcon from "@material-ui/icons/Timelapse";
 
 function Body() {
-  const [{ playlists, user, spotify }] = useDataLayerValue();
+  const [{ selectedPlaylistId, user, spotify }] = useDataLayerValue();
   const [selectedPlaylist, setSelectedPlaylist] = useState(null);
   const [time, setTime] = useState();
 
   useEffect(() => {
-    spotify.getPlaylist("5aIGOgHCXvywzRMVDiKEF4").then((response) => {
+    spotify.getPlaylist(selectedPlaylistId).then((response) => {
       setSelectedPlaylist(response);
-      console.log("response::::", response);
+      // console.log("response::::", response);
     });
 
     let totalTime = selectedPlaylist?.tracks?.items?.reduce(
@@ -31,7 +30,17 @@ function Body() {
     mins = Number.parseInt(mins);
     let _time = `${selectedPlaylist?.tracks?.items.length} songs, ${hours} hr ${mins} mins`;
     setTime(_time);
-  }, []);
+  }, [selectedPlaylistId]);
+
+  const getFontSize = (textLength) => {
+    const baseSize = 10;
+    if (textLength >= baseSize) {
+      textLength = baseSize - 2;
+    }
+    let fontSize = baseSize - textLength;
+    fontSize *= 25;
+    return fontSize;
+  };
 
   return (
     <div className="body">
@@ -46,7 +55,9 @@ function Body() {
         }
         <div className="body__infoText">
           <strong>PLAYLIST</strong>
-          <h2>{selectedPlaylist?.name}</h2>
+          <h2 style={{ fontSize: getFontSize(selectedPlaylist?.name.length) }}>
+            {selectedPlaylist?.name}
+          </h2>
           <p>{selectedPlaylist?.description}</p>
           <div className="body__infoText__songs">
             <p>{user?.display_name}</p>

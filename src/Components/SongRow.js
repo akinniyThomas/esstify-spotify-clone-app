@@ -3,7 +3,6 @@ import "./SongRow.css";
 import SettingsInputAntennaIcon from "@material-ui/icons/SettingsInputAntenna";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import Box from "@material-ui/core/Box";
-import TimeLapseIcon from "@material-ui/icons/Timelapse";
 
 function SongRow({ track, name }) {
   return (

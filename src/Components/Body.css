@@ -58,8 +58,11 @@
 }
 
 .body__infoText h2 {
-  font-size: 96px;
+  font-size: 3.5vw;
+  max-height: 150px;
+  /* object-fit: contain; */
   margin-bottom: 10px;
+  overflow: hidden;
 }
 
 .body__infoText > p {
