@@ -28,8 +28,14 @@ function Header() {
             src={user?.images[0].url}
             alt={user?.display_name}
           />
-          <p className="header__right__name">{user?.display_name}</p>
-          {!dropState ? <ArrowDropDown /> : <ArrowDropUp />}
+          <div className="header__right__besideAvatar">
+            <p className="header__right__name">{user?.display_name}</p>
+            {!dropState ? (
+              <ArrowDropDown className="header__right__drop" />
+            ) : (
+              <ArrowDropUp className="header__right__drop" />
+            )}
+          </div>
         </div>
       </div>
     </div>

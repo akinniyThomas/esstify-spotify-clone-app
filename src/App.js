@@ -30,7 +30,7 @@ function App() {
         spotify,
       });
       spotify.getMe().then((user) => {
-        console.log(user);
+        // console.log(user);
         dispatch({
           type: "SET_USER",
           user,
@@ -38,7 +38,7 @@ function App() {
       });
 
       spotify.getUserPlaylists().then((playlists) => {
-        console.log("the playlists here: ", playlists);
+        // console.log("the playlists here: ", playlists);
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists,
@@ -50,8 +50,8 @@ function App() {
 
   return (
     <div className="app">
-      {console.log("playlists::::", playlists)}
-      {console.log("token::", token)}
+      {/* {console.log("playlists::::", playlists)}
+      {console.log("token::", token)} */}
       {token ? <Player spotify={spotify} /> : <Login />}
     </div>
   );

@@ -1,0 +1,40 @@
+.songRow {
+  /* display: flex; */
+  cursor: default;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  padding: 5px;
+}
+
+.songRow:hover {
+  background-color: rgba(128, 128, 128, 0.123);
+}
+
+.songRow:hover .songRow__connect {
+  display: none;
+}
+
+.songRow:hover .songRow__playArrow {
+  display: block;
+}
+
+.songRow__connect {
+  margin-right: 15px;
+}
+
+.songRow__playArrow {
+  margin-right: 15px;
+}
+
+.songRow__img {
+  object-fit: contain;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.songRow > p,
+.songRow h3 {
+  margin-right: 15px;
+}

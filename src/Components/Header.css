@@ -1,6 +1,7 @@
 .header {
   display: flex;
   margin-top: 0px;
+  margin-bottom: 40px;
 }
 
 .header__left {
@@ -15,6 +16,10 @@
 .header__left input {
   border: none;
   width: 100%;
+}
+
+.header__left input:focus {
+  border: none;
 }
 
 .header__right {
@@ -38,6 +43,34 @@
   transition: transform 300ms ease-in-out;
 }
 
+@media (max-width: 580px) {
+  .header__left {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .header__right__button {
+    display: none;
+  }
+
+  .header__right__name {
+    display: none;
+  }
+
+  .header__right__drop {
+    margin-left: -30px;
+  }
+
+  .header__right__name__comp {
+    width: 40px;
+  }
+}
+
+.header__right__avatar {
+  margin-right: 5px;
+}
+
 .header__right__button:hover {
   transform: scale(1.2);
 }
@@ -46,9 +79,13 @@
   display: flex;
   background-color: black;
   border-radius: 19px;
-  min-width: 100px;
+  /* min-width: 100px; */
   align-items: center;
   justify-content: space-between;
   height: 40px;
   cursor: pointer;
+}
+
+.header__right__besideAvatar {
+  display: flex;
 }

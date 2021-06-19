@@ -10,7 +10,9 @@ import { useDataLayerValue } from "../DataLayer";
 
 function SideBar() {
   const [{ playlists }, dispatch] = useDataLayerValue();
-
+  function truncate(str, n) {
+    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
+  }
   return (
     <div className="sidebar">
       <img src={spotifyImage} alt="Spotify" />
@@ -23,7 +25,7 @@ function SideBar() {
       {/* map through the playlist like this */}
       {/* {console.log(playlists)} */}
       {playlists?.items?.map((playlist) => (
-        <SideBarOption title={playlist.name} />
+        <SideBarOption id={playlist.id} title={truncate(playlist.name, 30)} />
       ))}
     </div>
   );
